@@ -31,6 +31,14 @@ String methods (substring, indexOf, toUpperCase)
 Switch expressions (Java's modern arrow syntax)
 Writing modular code using separate methods for each operation
 Debugging — specifically tracking down mismatched braces
+# Java Quiz Application
+
+A simple application that asks some questions along with the options, you guess the right one
+After each input it replies if the guess was correct or incorrect, and in the end the application shows total score.
+
+### Why this application
+
+This is a simple program, I made for practicing 2d arrays. Without practice, I know that only knowing the theory will not help me. So, to get a better grasp of the function i made this application.
 
 
 Status
