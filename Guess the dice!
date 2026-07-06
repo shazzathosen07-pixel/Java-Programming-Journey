@@ -1,0 +1,79 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class practiceAll {
+    public static void main(String [] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hello, welcome to XERO CODE DOMAIN!!");
+        Random random = new Random();
+        System.out.print("Take a guess: ");
+        int guess = scanner.nextInt();
+        if(guess>0){
+            int roll = random.nextInt(1, 7);
+            System.out.println("The dice rolled " + roll);
+            if(roll == guess){
+                System.out.println("You are lucky you won!!🥳🥳🥳");
+            }
+            else{
+                System.out.println("You lost, better luck next time🥲");
+            }
+            printDie(roll);
+
+        }
+        else{
+            System.out.println("Guess can't be 0 so please try again!!!");
+        }
+    }
+    static void printDie(int x){
+        String dice1= """
+                ---------
+                |       |
+                |   ■   |
+                |       |
+                ---------
+                """;
+        String dice2= """
+                ---------
+                |■      |
+                |       |
+                |      ■|
+                ---------
+                """;
+        String dice3= """
+                ---------
+                |■      |
+                |   ■   |
+                |      ■|
+                ---------
+                """;
+        String dice4= """
+                ---------
+                |■     ■|
+                |       |
+                |■     ■|
+                ---------
+                """;
+        String dice5= """
+                ---------
+                |■     ■|
+                |   ■   |
+                |■     ■|
+                ---------
+                """;
+        String dice6= """
+                ---------
+                |■  ■  ■|
+                |       |
+                |■  ■  ■|
+                ---------
+                """;
+        switch (x){
+            case 1-> System.out.println(dice1);
+            case 2-> System.out.println(dice2);
+            case 3-> System.out.println(dice3);
+            case 4-> System.out.println(dice4);
+            case 5-> System.out.println(dice5);
+            default-> System.out.println(dice6);
+        }
+    }
+}
