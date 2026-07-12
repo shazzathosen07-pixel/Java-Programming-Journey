@@ -1,0 +1,94 @@
+import java.util.Random;
+import java.util.Scanner;
+public class HelloKitty {
+    public static void main(String [] args){
+       Random random = new Random();
+       Scanner scanner = new Scanner(System.in);
+        int balance = 500;
+        String [] row ={"🍉", "🧸", "💎", "🎊"};
+        String [] randomRow = new String[3];
+        boolean willContinue = true;
+       //welcome to the slot machine
+        System.out.println("**************************");
+        System.out.println("Welcome in the NightHawl29");
+        System.out.println("**************************");
+        System.out.println("🍉 | 💎 | 🧸");
+        System.out.println("Give a spin and see your luck!!");
+        while (willContinue){
+            System.out.printf("#Your balance is: $%d, #Please place your bet: $", balance);
+            int bet = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println();
+            while(bet<=0 || bet>balance){
+                if(bet<=0){
+                    System.out.println("**Invalid input\nBet amount cannot be Zero or negative");
+                }
+                else{
+                    System.out.println("**Invalid input\n**Bet amount cannot be more than balance");
+                }
+                System.out.printf("#Your balance is: $%d, #Please place your bet: $", balance);
+                bet=scanner.nextInt();
+                scanner.nextLine();
+            }
+            balance -= bet;
+            System.out.println("Spinning....");
+            System.out.println("**************");
+            for(int i=0;i<3;i++){
+                randomRow[i] = row[random.nextInt(4)];
+                System.out.print(randomRow[i]);
+                if(i<=1){
+                    System.out.print(" |");
+                }
+            }
+            System.out.println("\n**************");
+            System.out.println(" ");
+            if(randomRow[0].equals(randomRow[1]) && randomRow[1].equals(randomRow[2])){
+                switch (randomRow[0]){
+                    case "🍉" -> {
+                        bet*=3;
+                        balance = balance+bet;
+                        System.out.println("YOU WON HURRAY!!!! YOU GET 3X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    case "🧸"-> {
+                        bet*=5;
+                        balance = balance+bet;
+                        System.out.println("YOU WON HURRAY!!!! YOU GET 5X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    case "💎"-> {
+                        bet*=10;
+                        balance = balance+bet;
+                        System.out.println("YOU WON HURRAY!!!! YOU GET 10X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    default -> {
+                        bet*=20;
+                        balance = balance+bet;
+                        System.out.println("YOU WON HURRAY!!!! YOU GET 20X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                }
+            }
+            else{
+                System.out.println("BETTER LUCK NEXT TIME💤💤💤");
+            }
+            System.out.println("Your current balance: $" + balance);
+            System.out.print("Do you wish to continue (Yes/No): ");
+            String prompt = scanner.nextLine().toLowerCase();
+            if(prompt.equals("no")){
+                willContinue = false;
+                System.out.println("Thanks for the company, see you again!!!");
+            }
+            else if(prompt.equals("yes")){
+                willContinue = true;
+                System.out.println("Here we go again!!!!");
+            }
+            else{
+                willContinue = false;
+                System.out.println("Thanks for the company, see you again!!!");
+            }
+        }
+        //if matches winning condition multiply the bet and add it to the balance and ask the user if they want to continue or not
+    }
+}
