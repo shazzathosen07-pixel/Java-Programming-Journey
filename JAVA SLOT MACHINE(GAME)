@@ -70,6 +70,62 @@ public class HelloKitty {
                     }
                 }
             }
+            else if(randomRow[0].equals(randomRow[1]) || randomRow[1].equals(randomRow[2])){
+                switch (randomRow[1]){
+                    case "🍉" -> {
+                        bet*=2;
+                        balance = balance+bet;
+                        System.out.println("VERY CLOSE!! YOU GET 2X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    case "🧸"-> {
+                        bet*=3;
+                        balance = balance+bet;
+                        System.out.println("VERY CLOSE!! YOU GET 3X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    case "💎"-> {
+                        bet*=8;
+                        balance = balance+bet;
+                        System.out.println("VERY CLOSE!! YOU GET 8X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    default -> {
+                        bet*=15;
+                        balance = balance+bet;
+                        System.out.println("VERY CLOSE!! YOU GET 15X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                }
+            }
+            else if(randomRow[0].equals(randomRow[2])){
+                switch (randomRow[0]){
+                    case "🍉" -> {
+                        bet*=2;
+                        balance = balance+bet;
+                        System.out.println("VERY CLOSE!! YOU GET 2X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    case "🧸"-> {
+                        bet*=3;
+                        balance = balance+bet;
+                        System.out.println("VERY CLOSE!! YOU GET 3X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    case "💎"-> {
+                        bet*=8;
+                        balance = balance+bet;
+                        System.out.println("VERY CLOSE!! YOU GET 8X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                    default -> {
+                        bet*=15;
+                        balance = balance+bet;
+                        System.out.println("VERY CLOSE!! YOU GET 15X YOUR BET");
+                        System.out.println("Your profit including the original bet: $" + bet);
+                    }
+                }
+            }
             else{
                 System.out.println("BETTER LUCK NEXT TIME💤💤💤");
             }
@@ -89,6 +145,6 @@ public class HelloKitty {
                 System.out.println("Thanks for the company, see you again!!!");
             }
         }
-        //if matches winning condition multiply the bet and add it to the balance and ask the user if they want to continue or not
+
     }
 }
