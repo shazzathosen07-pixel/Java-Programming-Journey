@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Question4 {
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Number of Members: ");
+        int members = sc.nextInt();
+        for(int i= 1;i<=members;i++){
+            System.out.print("Exercises for Member-" + i +": ");
+            int exc = sc.nextInt();
+            int exc1 = 0;
+            double totalCalo=0.0;
+            double rawAvg = 0.0;
+            int count = 0;
+            if(exc<=3){
+                exc1=exc;
+            }
+            else{
+                System.out.println("(Can’t do more than 3 exercise)");
+                exc1=3;
+            }
+            for(int j=1;j<=exc1;j++){
+                System.out.printf("Exercise-%d: ", j);
+                int calo = sc.nextInt();
+                rawAvg+= (double) calo;
+                if(calo>350){
+                    totalCalo+= (double) calo + (calo/2.0);
+                }
+                else{
+                    totalCalo+= (double) calo;
+                }
+                if(calo<200){
+                    count++;
+                }
+            }
+            if(count==exc1){
+                totalCalo-=(totalCalo*0.1);
+            }
+            rawAvg = rawAvg/exc1;
+            if(rawAvg>400){
+                totalCalo+=150;
+            }
+            double avgCalo = totalCalo/exc1;
+            System.out.printf("Average calories earned per day for Member-%d: %.3f\n", i, avgCalo);
+        }
+
+    }
+}
